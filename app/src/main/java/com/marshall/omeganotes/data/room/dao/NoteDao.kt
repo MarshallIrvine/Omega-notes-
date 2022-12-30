@@ -1,4 +1,4 @@
-package com.marshall.omeganotes.data.db.dao
+package com.marshall.omeganotes.data.room.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
