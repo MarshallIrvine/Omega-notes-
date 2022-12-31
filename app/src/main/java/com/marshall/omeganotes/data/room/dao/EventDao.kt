@@ -11,14 +11,14 @@ import com.marshall.omeganotes.data.model.Task
 @Dao
 interface EventDao {
     @Query("SELECT * FROM event")
-    fun getAllEvents()
+    fun getAllEvents(): List<Event>
 
     @Insert
-    fun insertEvent(task: Task)
+    suspend fun insertEvent(event: Event)
 
     @Update
-    fun updateEvent(event: Event)
+    suspend fun updateEvent(event: Event)
 
     @Delete
-    fun deleteEvent(event: Event)
+    suspend fun deleteEvent(event: Event)
 }
