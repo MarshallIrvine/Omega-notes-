@@ -12,7 +12,7 @@ data class Task(
     val title: String,
     val description: String?,
     @ColumnInfo(name = "state")
-    val isDone: Boolean,
+    val isDone: Boolean = false,
     @ColumnInfo(name = "priority")
     val priorityLevel: Int,
     val createdAt: Date = Date()

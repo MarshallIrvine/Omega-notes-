@@ -10,9 +10,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OmegaViewModel @Inject constructor(private val taskUseCase: TaskUseCase): ViewModel() {
+class TasksViewModel @Inject constructor(private val taskUseCase: TaskUseCase): ViewModel() {
     private var _tasks = MutableLiveData<List<Task>>()
-    val task get() = _tasks
+    val tasks get() = _tasks
 
     fun observeTasks() {
         viewModelScope.launch {

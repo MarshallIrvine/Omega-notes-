@@ -3,4 +3,6 @@
     <string name="todo_menu_title">Todo</string>
     <string name="notes_menu_title">Notes</string>
     <string name="event_menu_title">Évènements</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
