@@ -9,7 +9,7 @@ import com.marshall.omeganotes.data.model.Note
 
 @Dao
 interface NoteDao {
-    @Query("SELECT * FROM note ORDER BY idNote")
+    @Query("SELECT * FROM note ORDER BY id")
     fun getAllNotes(): List<Note>
 
     @Insert
