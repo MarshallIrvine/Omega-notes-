@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.marshall.omeganotes.data.room.dao.EventDao
 import com.marshall.omeganotes.data.room.dao.NoteDao
 import com.marshall.omeganotes.data.room.dao.TaskDao
@@ -12,6 +13,7 @@ import com.marshall.omeganotes.data.model.Note
 import com.marshall.omeganotes.data.model.Task
 
 @Database(entities = [Task::class, Note::class, Event::class], version = 1)
+@TypeConverters(Converters::class)
 abstract class OmegaDatabase : RoomDatabase() {
     abstract fun getNoteDao(): NoteDao
     abstract fun getTaskDao(): TaskDao

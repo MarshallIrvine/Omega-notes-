@@ -7,8 +7,8 @@ import java.util.Date
 @Entity(tableName = "event")
 data class Event(
     @PrimaryKey(autoGenerate = true)
-    val idEvent: Int,
+    override val id: Int = 0,
     val location: String,
     val description: String?,
-    val eventDate: Date
-)
+    val eventDate: Date,
+): OmegaEntity

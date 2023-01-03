@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "note")
 data class Note(
     @PrimaryKey(autoGenerate = true)
-    val idNote: Int = 0,
+    override val id: Int = 0,
     val content: String
-)
+): OmegaEntity

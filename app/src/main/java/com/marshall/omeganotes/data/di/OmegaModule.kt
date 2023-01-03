@@ -2,6 +2,9 @@ package com.marshall.omeganotes.data.di
 
 import android.content.Context
 import com.marshall.omeganotes.data.model.Task
+import com.marshall.omeganotes.data.repository.EventRepository
+import com.marshall.omeganotes.data.repository.NoteRepository
+import com.marshall.omeganotes.data.repository.TaskRepository
 import com.marshall.omeganotes.data.room.OmegaDatabase
 import com.marshall.omeganotes.data.room.dao.EventDao
 import com.marshall.omeganotes.data.room.dao.NoteDao
@@ -27,6 +30,11 @@ object OmegaModule {
     fun provideEventDao(omegaDatabase: OmegaDatabase): EventDao {
         return omegaDatabase.getEventDao()
     }
+    @Provides
+    @Singleton
+    fun provideEventRepository(eventDao: EventDao): EventRepository {
+        return EventRepository(eventDao)
+    }
 
     @Provides
     @Singleton
@@ -36,8 +44,8 @@ object OmegaModule {
 
     @Provides
     @Singleton
-    fun provideTaskDao(omegaDatabase: OmegaDatabase): TaskDao {
-        return omegaDatabase.getTaskDao()
+    fun provideNoteRepository(noteDao: NoteDao): NoteRepository {
+        return NoteRepository(noteDao)
     }
 
 
